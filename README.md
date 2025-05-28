@@ -8,8 +8,8 @@ Firmy monitorujące media społecznościowe potrzebują zautomatyzowanych narzę
 
 ## Wyniki 🎯
 - **82% dokładności na zbiorze testowym** ✅ - przekracza założony próg biznesowy 75%
-- Najlepsze wyniki: **smutek** 😢 (F1: 0.873), **złość** 😠 (F1: 0.846)
-- Najtrudniejsze klasy: **zaskoczenie** 😲 (F1: 0.673), **miłość** ❤️ (F1: 0.704)
+- Najlepsze wyniki: **smutek** (F1: 0.873), **złość** (F1: 0.846)
+- Najtrudniejsze klasy: **zaskoczenie** (F1: 0.673), **miłość** (F1: 0.704)
 - Model gotowy do wdrożenia produkcyjnego 🚀
 
 ## Stack Technologiczny 🛠️
@@ -25,22 +25,22 @@ Firmy monitorujące media społecznościowe potrzebują zautomatyzowanych narzę
 emotion-classification-nlp/
 ├── README.md
 ├── requirements.txt
-├── analiza_sentymentu_emotions.ipynb    # Główny notebook z analizą 📓
+├── analiza_sentymentu_emotions.ipynb    # Główny notebook z analizą
 ├── data/
-│   ├── train.txt              # Zbiór treningowy 📚
-│   ├── val.txt                # Zbiór walidacyjny ✔️
-│   └── test.txt               # Zbiór testowy 🧪
+│   ├── train.txt              # Zbiór treningowy
+│   ├── val.txt                # Zbiór walidacyjny 
+│   └── test.txt               # Zbiór testowy 
 ├── src/
 │   ├── __init__.py
-│   ├── data_exploration.py    # Funkcje eksploracji danych 🔍
-│   ├── preprocessing.py       # Pipeline przetwarzania tekstu ⚙️
-│   ├── modeling.py           # Trenowanie i porównanie modeli 🏆
-│   ├── evaluation.py         # Finalna ewaluacja i tuning 📏
-│   └── deployment.py         # Wdrożenie modelu do produkcji 🚀
+│   ├── data_exploration.py    # Funkcje eksploracji danych 
+│   ├── preprocessing.py       # Pipeline przetwarzania tekstu 
+│   ├── modeling.py           # Trenowanie i porównanie modeli
+│   ├── evaluation.py         # Finalna ewaluacja i tuning
+│   └── deployment.py         # Wdrożenie modelu do produkcji
 └── results/
     ├── confusion_matrix.png
     ├── training_data_exploration.png
-    └── emotion_model.pkl      # Zapisany model 💾
+    └── emotion_model.pkl      # Zapisany model
 ```
 
 ## Instalacja ⚙️
@@ -66,15 +66,15 @@ jupyter notebook analiza_sentymentu_emotions.ipynb
 ## Kluczowe Funkcjonalności ⭐
 
 ### Inteligentne Przetwarzanie Tekstu 🧠
-- **Automatyczne wykrywanie stop words** 🚫 używając heurystyki (słowa występujące w >67% klas emocji)
-- **Wektoryzacja TF-IDF** 📊 z uni- i bi-gramami
-- **Zbalansowane wagi klas** ⚖️ do radzenia sobie z nierównowagą danych
+- **Automatyczne wykrywanie stop words** używając heurystyki (słowa występujące w >67% klas emocji)
+- **Wektoryzacja TF-IDF** z uni- i bi-gramami
+- **Zbalansowane wagi klas** do radzenia sobie z nierównowagą danych
 
 ### Porównanie Modeli 🏁
 Przetestowano 3 algorytmy:
-- **Regresja logistyczna** 🥇 (Zwycięzca: 80.93% dokładności walidacyjnej)
-- **Random Forest** 🌳 (78.00% dokładności, problemy z overfittingiem)
-- **Naive Bayes** 📊 (78.72% dokładności, najlepsza generalizacja)
+- **Regresja logistyczna** (Zwycięzca: 80.93% dokładności walidacyjnej)
+- **Random Forest** (78.00% dokładności, problemy z overfittingiem)
+- **Naive Bayes** (78.72% dokładności, najlepsza generalizacja)
 
 ### Zaawansowana Analiza 🔬
 - **Macierz pomyłek** 🎯 ujawniająca wzorce błędnej klasyfikacji emocji
@@ -102,28 +102,28 @@ results = predictor.predict_batch(texts)
 ```
 
 **Uwagi wdrożeniowe:** ⚠️
-- Modele z pewnością <50% wymagają przeglądu przez analityka 👨‍💼
-- System nadaje się do automatycznego pre-sortowania z opcją weryfikacji manualnej ✋
-- Model zapisywany jest w formacie pickle w `results/emotion_model.pkl` 💾
+- Modele z pewnością <50% wymagają przeglądu przez analityka 
+- System nadaje się do automatycznego pre-sortowania z opcją weryfikacji manualnej 
+- Model zapisywany jest w formacie pickle w `results/emotion_model.pkl` 
 
 ## Zbiór Danych 📊
-- **Trening**: 16,000 próbek 📚
-- **Walidacja**: 2,000 próbek ✔️
-- **Test**: 2,000 próbek 🧪
-- **Format**: Pary tekst-emocja oddzielone średnikiem ➡️
+- **Trening**: 16,000 próbek 
+- **Walidacja**: 2,000 próbek
+- **Test**: 2,000 próbek
+- **Format**: Pary tekst-emocja oddzielone średnikiem
 - **Źródło**: [Emotions Dataset for NLP](https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp) 🔗
 
 ## Kluczowe Obserwacje 💡
-1. **Radość często mylona ze smutkiem** 😊↔️😢 - wskazuje na obecność ironii/sarkazmu w mediach społecznościowych
-2. **Zaskoczenie najtrudniejsze do klasyfikacji** 😲 - z powodu nierównowagi danych (3.6% próbek)
-3. **Wulgarny język koreluje z silnymi emocjami** 🤬 - ważne dla moderacji treści
-4. **Kontekst ma znaczenie** 🎯 - te same słowa mogą wyrażać różne emocje w zależności od użycia
+1. **Radość często mylona ze smutkiem** - wskazuje na obecność ironii/sarkazmu w mediach społecznościowych
+2. **Zaskoczenie najtrudniejsze do klasyfikacji** - z powodu nierównowagi danych (3.6% próbek)
+3. **Wulgarny język koreluje z silnymi emocjami** - ważne dla moderacji treści
+4. **Kontekst ma znaczenie** - te same słowa mogą wyrażać różne emocje w zależności od użycia
 
 ## Zastosowania Biznesowe 💼
-- **Zarządzanie kryzysowe** ⚠️ - Szybka detekcja negatywnych nastrojów
-- **Monitoring kampanii** 📈 - Śledzenie pozytywnych reakcji na marketing
-- **Moderacja treści** 🛡️ - Automatyczne filtrowanie oparte na emocjach
-- **Insights konsumenckie** 🎯 - Zrozumienie emocjonalnych reakcji klientów
+- **Zarządzanie kryzysowe** - Szybka detekcja negatywnych nastrojów
+- **Monitoring kampanii** - Śledzenie pozytywnych reakcji na marketing
+- **Moderacja treści** - Automatyczne filtrowanie oparte na emocjach
+- **Insights konsumenckie** - Zrozumienie emocjonalnych reakcji klientów
 
 ## Przyszłe Usprawnienia 🔮
 - Zebranie większej ilości danych dla niedoreprezentowanych emocji (zaskoczenie, miłość) 📊
@@ -133,12 +133,12 @@ results = predictor.predict_batch(texts)
 
 ## Metodologia 📋
 Projekt realizowany według standardu **CRISP-DM**:
-1. **Zrozumienie biznesowe** 💼 - Analiza potrzeb firmy monitorującej media
-2. **Zrozumienie danych** 🔍 - Eksploracja 16k tekstów i rozkładu emocji
-3. **Przygotowanie danych** ⚙️ - Inteligentne przetwarzanie i wektoryzacja TF-IDF
-4. **Modelowanie** 🏆 - Porównanie algorytmów i wybór najlepszego
-5. **Ewaluacja** 📏 - Tuning hiperparametrów, testy finalne i analiza wyników
-6. **Wdrożenie** 🚀 - Deployment modelu z interfejsem predykcji
+1. **Zrozumienie biznesowe** - Analiza potrzeb firmy monitorującej media
+2. **Zrozumienie danych** - Eksploracja 16k tekstów i rozkładu emocji
+3. **Przygotowanie danych** - Inteligentne przetwarzanie i wektoryzacja TF-IDF
+4. **Modelowanie** - Porównanie algorytmów i wybór najlepszego
+5. **Ewaluacja** - Tuning hiperparametrów, testy finalne i analiza wyników
+6. **Wdrożenie** - Deployment modelu z interfejsem predykcji
 
 ## Licencja 📄
 MIT License
