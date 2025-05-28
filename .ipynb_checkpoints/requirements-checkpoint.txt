@@ -1,0 +1,17 @@
+# Emotion Classification NLP Project Requirements
+
+# Core Data Science Libraries
+pandas>=2.2.2
+numpy>=1.26.4
+scikit-learn>=1.5.1
+
+# Text Processing
+nltk>=3.9
+
+# Visualization
+matplotlib>=3.9.2
+seaborn>=0.13.0
+
+# Jupyter Environment
+jupyter>=1.0.0
+ipykernel>=6.29.0
